@@ -14,12 +14,14 @@ function moveCursor(e) {
     } else {
       e.target.previousElementSibling.focus();
     }
-  } if ( e.code === 'Digit0' || e.code === 'Digit1' || e.code === 'Digit2' || e.code === 'Digit3' || e.code === 'Digit4' || e.code === 'Digit5' || e.code === 'Digit6' || e.code === 'Digit7' || e.code === 'Digit8' || e.code === 'Digit9' ) {
+  } else if ( e.key >= 0 && e.key <= 9 ) {
     e.target.classList.add('filled');
     if ( e.target === codes[5] ) {
       return;
     } else {
       e.target.nextElementSibling.focus();
     }
+  } else {
+    e.target.value = '';
   }
 }
