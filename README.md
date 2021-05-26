@@ -25,3 +25,30 @@
 - Challenge from Brad Traversy & Florin Pop on Udemy '50 Projects in 50 Days'
 
 #### Takeaways from the instructor
+
+1. HTML
+
+- for the number input min=0 and max=9
+
+2. CSS
+
+- container: max-width
+- code:valid - when number input filled
+- @media
+
+3. JavaScript
+
+- use e.key if ( e.key >= 0 && e.key <=9 )
+
+```
+codes.forEach((code, idx) => {
+  code.addEventListener('keydown', (e) => {
+    if ( e.key >= 0 && e.key <= 9 ) {
+      codes[idx].value = '';
+      setTimeout(() => code[idx + 1].focus(), 10)
+    } else if ( e.key === 'Backspace' ) {
+      setTimeout(() => code[idx - 1].focus(), 10)
+    }
+  })
+})
+```
